@@ -11,7 +11,7 @@ jobs:
   build:
     runs-on: macos-26
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
       - uses: dtolnay/rust-toolchain@stable
         with:
@@ -183,12 +183,12 @@ jobs:
           cp -R build/Build/Products/Release-iphoneos/FigCraft.app Payload/
           zip -qr ../FigCraft.ipa Payload
 
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         with:
           name: FigCraft-ipa
           path: FigCraft.ipa
 
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         if: always()
         with:
           name: build-logs
